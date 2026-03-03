@@ -1,0 +1,198 @@
+/* ================================ */
+/* VARIABLES */
+/* ================================ */
+:root {
+  --color-fondo: #050505;
+  --color-verde-neon: #0f0f0f;
+  --color-violeta-neon: #8a2be2;
+
+  --fuente-titulo: 'Press Start 2P', cursive;
+  --fuente-cuerpo: 'Orbitron', sans-serif;
+}
+
+/* ================================ */
+/* RESET */
+/* ================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ================================ */
+/* BODY ESTABLE */
+/* ================================ */
+body {
+  margin: 0;
+  font-family: var(--fuente-cuerpo);
+  background: var(--color-fondo);
+  color: #fff;
+
+  min-height: 100svh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ================================ */
+/* SCANLINES CRT */
+/* ================================ */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.04) 0px,
+    rgba(255,255,255,0.04) 1px,
+    transparent 2px
+  );
+  mix-blend-mode: overlay;
+  animation: scan 8s linear infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* ================================ */
+/* WRAPPER CENTRAL */
+/* ================================ */
+.page {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================================ */
+/* CONTENEDOR */
+/* ================================ */
+.container {
+  text-align: center;
+  z-index: 10;
+  animation: fadeIn 1.2s ease forwards;
+  padding: 24px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================ */
+/* TITULO GLITCH */
+/* ================================ */
+.title {
+  font-family: var(--fuente-titulo);
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+
+  text-shadow:
+    0 0 10px var(--color-verde-neon),
+    0 0 20px var(--color-violeta-neon);
+
+  animation: neonPulse 1.5s ease-in-out infinite alternate;
+}
+
+.title::before,
+.title::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+}
+
+.title::before {
+  color: var(--color-verde-neon);
+  transform: translate(-2px, 1px);
+  animation: glitch1 0.25s infinite;
+}
+
+.title::after {
+  color: var(--color-violeta-neon);
+  transform: translate(2px, -1px);
+  animation: glitch2 0.28s infinite;
+}
+
+@keyframes glitch1 {
+  0% { transform: translate(-2px,1px); }
+  50% { transform: translate(1px,-1px); }
+  100% { transform: translate(-2px,1px); }
+}
+
+@keyframes glitch2 {
+  0% { transform: translate(2px,-1px); }
+  50% { transform: translate(-1px,1px); }
+  100% { transform: translate(2px,-1px); }
+}
+
+@keyframes neonPulse {
+  0% { text-shadow: 0 0 8px var(--color-violeta-neon); }
+  100% { text-shadow: 0 0 20px var(--color-verde-neon); }
+}
+
+/* ================================ */
+/* TEXTO */
+/* ================================ */
+.subtitle {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.tag {
+  margin-top: 10px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+/* ================================ */
+/* BOTÓN */
+/* ================================ */
+.btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 14px 40px;
+
+  font-family: var(--fuente-titulo);
+  font-size: 0.85rem;
+  text-decoration: none;
+
+  color: var(--color-fondo);
+  background: var(--color-verde-neon);
+  border-radius: 6px;
+
+  box-shadow: 0 0 12px var(--color-verde-neon);
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  background: var(--color-violeta-neon);
+  box-shadow: 0 0 22px var(--color-violeta-neon);
+}
+
+/* ================================ */
+/* CANVAS */
+/* ================================ */
+canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* ================================ */
+/* RESPONSIVE */
+/* ================================ */
+@media (max-width: 500px) {
+  .title {
+    font-size: 1.8rem;
+  }
+}
