@@ -1,6 +1,4 @@
-/* ================================ */
-/* VARIABLES */
-/* ================================ */
+
 :root {
   --color-fondo: #050505;
   --color-verde-neon: #0f0f0f;
@@ -165,7 +163,7 @@ body::before {
   font-size: 0.85rem;
   text-decoration: none;
 
-  color: var(--color-fondo);
+  color: var(--color-verde-neon);
   background: var(--color-verde-neon);
   border-radius: 6px;
 
@@ -175,8 +173,8 @@ body::before {
 
 .btn:hover {
   transform: scale(1.08);
-  background: var(--color-violeta-neon);
-  box-shadow: 0 0 22px var(--color-violeta-neon);
+  background: var(--color-verde-neon);
+  box-shadow: 0 0 22px var(--color-verde-neon);
 }
 
 /* ================================ */
