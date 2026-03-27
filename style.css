@@ -163,7 +163,7 @@ body::before {
   font-size: 0.85rem;
   text-decoration: none;
 
-  color: var(--color-verde-neon);
+  color: var(--color-fondo);
   background: var(--color-verde-neon);
   border-radius: 6px;
 
@@ -173,8 +173,8 @@ body::before {
 
 .btn:hover {
   transform: scale(1.08);
-  background: var(--color-verde-neon);
-  box-shadow: 0 0 22px var(--color-verde-neon);
+  background: var(--color-violeta-neon);
+  box-shadow: 0 0 22px var(--color-violeta-neon);
 }
 
 /* ================================ */
