@@ -8,18 +8,13 @@
   --fuente-cuerpo: 'Orbitron', sans-serif;
 }
 
-/* ================================ */
-/* RESET */
-/* ================================ */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* ================================ */
-/* BODY ESTABLE */
-/* ================================ */
 body {
   margin: 0;
   font-family: var(--fuente-cuerpo);
@@ -31,9 +26,7 @@ body {
   position: relative;
 }
 
-/* ================================ */
-/* SCANLINES CRT */
-/* ================================ */
+
 body::before {
   content: "";
   position: absolute;
@@ -55,9 +48,7 @@ body::before {
   100% { transform: translateY(100%); }
 }
 
-/* ================================ */
-/* WRAPPER CENTRAL */
-/* ================================ */
+
 .page {
   min-height: 100svh;
   display: flex;
@@ -65,9 +56,7 @@ body::before {
   align-items: center;
 }
 
-/* ================================ */
-/* CONTENEDOR */
-/* ================================ */
+
 .container {
   text-align: center;
   z-index: 10;
@@ -80,9 +69,7 @@ body::before {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ================================ */
-/* TITULO GLITCH */
-/* ================================ */
+
 .title {
   font-family: var(--fuente-titulo);
   font-size: 2.6rem;
@@ -134,9 +121,6 @@ body::before {
   100% { text-shadow: 0 0 20px var(--color-verde-neon); }
 }
 
-/* ================================ */
-/* TEXTO */
-/* ================================ */
 .subtitle {
   margin-top: 20px;
   font-size: 0.9rem;
@@ -151,9 +135,6 @@ body::before {
   opacity: 0.6;
 }
 
-/* ================================ */
-/* BOTÓN */
-/* ================================ */
 .btn {
   display: inline-block;
   margin-top: 40px;
@@ -177,18 +158,13 @@ body::before {
   box-shadow: 0 0 22px var(--color-violeta-neon);
 }
 
-/* ================================ */
-/* CANVAS */
-/* ================================ */
+
 canvas {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-/* ================================ */
-/* RESPONSIVE */
-/* ================================ */
 @media (max-width: 500px) {
   .title {
     font-size: 1.8rem;
