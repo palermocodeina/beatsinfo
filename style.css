@@ -144,7 +144,7 @@ body::before {
   font-size: 0.85rem;
   text-decoration: none;
 
-  color: var(#0f0f0f);
+  color: var(#2f2f2f);
   background: var(--color-verde-neon);
   border-radius: 6px;
 
